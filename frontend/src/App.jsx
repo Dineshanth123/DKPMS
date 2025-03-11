@@ -13,7 +13,6 @@ const App = () => {
     localStorage.getItem("isAuthenticated") === "true"
   );
 
-  // Sync state with localStorage
   useEffect(() => {
     localStorage.setItem("isAuthenticated", isAuthenticated);
   }, [isAuthenticated]);

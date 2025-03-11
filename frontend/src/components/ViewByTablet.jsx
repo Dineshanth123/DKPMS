@@ -73,7 +73,6 @@ const ViewByTablet = () => {
     <div className="p-6 bg-gray-100 min-h-screen">
       <h1 className="text-3xl font-bold text-gray-800 mb-6">View by Tablet</h1>
 
-      {/* Filters */}
       <div className="mb-6 space-y-4">
         <input
           type="text"
@@ -98,7 +97,6 @@ const ViewByTablet = () => {
         />
       </div>
 
-      {/* Medicine Cards */}
       <div className="grid gap-6">
         {filteredMedicines.map((medicine) => {
           const daysToExpiry = Math.ceil(
@@ -107,14 +105,13 @@ const ViewByTablet = () => {
           const isExpiringSoon = daysToExpiry <= 30;
           const isLowQuantity = medicine.quantity < 50;
 
-          // Color variations based on conditions
-          let bgColor = "bg-white"; // Default
+          let bgColor = "bg-white"; 
           if (isExpiringSoon && isLowQuantity) {
-            bgColor = "bg-red-100"; // Red for expiring soon AND low quantity
+            bgColor = "bg-red-100"; 
           } else if (isExpiringSoon) {
-            bgColor = "bg-yellow-100"; // Yellow for expiring soon
+            bgColor = "bg-yellow-100"; 
           } else if (isLowQuantity) {
-            bgColor = "bg-green-100"; // Green for low quantity
+            bgColor = "bg-green-100"; 
           }
 
           return (
@@ -130,7 +127,6 @@ const ViewByTablet = () => {
               <p className="text-gray-600"><span className="font-semibold">Expiry Date:</span> {new Date(medicine.expiryDate).toLocaleDateString()}</p>
               <p className="text-gray-600"><span className="font-semibold">Days to Expiry:</span> {daysToExpiry}</p>
 
-              {/* Quantity Controls */}
               <div className="flex items-center space-x-4 mt-4">
                 <button
                   onClick={() => updateQuantity(medicine._id, -1)}
@@ -147,7 +143,6 @@ const ViewByTablet = () => {
                 </button>
               </div>
 
-              {/* Edit and Delete Buttons */}
               <div className="flex items-center space-x-4 mt-4">
                 <Link
                   to={`/update/${medicine._id}`}

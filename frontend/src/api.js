@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/medicines"; // Update with your backend URL
+const API_URL = "http://localhost:5000/api/medicines"; 
 
 export const getMedicines = () => axios.get(API_URL);
 export const getMedicineById = (id) => axios.get(`${API_URL}/${id}`);

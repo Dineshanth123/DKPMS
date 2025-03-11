@@ -44,7 +44,7 @@ const MedicineList = () => {
                 </td>
                 <td className="p-3 border-b border-gray-200">{med.quantity}</td>
                 <td className="p-3 border-b border-gray-200">
-                  ₹{med.price.toFixed(2)} {/* Rupee symbol added here */}
+                  ₹{med.price.toFixed(2)} 
                 </td>
                 <td className="p-3 border-b border-gray-200">{med.supplier}</td>
               </tr>

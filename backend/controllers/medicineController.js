@@ -1,7 +1,5 @@
-// medicineController.js
 const Medicine = require('../models/Medicine');
 
-// Get all medicines
 exports.getMedicines = async (req, res) => {
     try {
         const medicines = await Medicine.find();
@@ -11,7 +9,6 @@ exports.getMedicines = async (req, res) => {
     }
 };
 
-// Get medicine by ID
 exports.getMedicineById = async (req, res) => {
     try {
         const medicine = await Medicine.findById(req.params.id);
@@ -22,7 +19,6 @@ exports.getMedicineById = async (req, res) => {
     }
 };
 
-// Create a new medicine
 exports.createMedicine = async (req, res) => {
     try {
         const { name, batchNumber, expiryDate, quantity, price, supplier } = req.body;
@@ -34,7 +30,6 @@ exports.createMedicine = async (req, res) => {
     }
 };
 
-// Update a medicine
 exports.updateMedicine = async (req, res) => {
     try {
         const medicine = await Medicine.findByIdAndUpdate(req.params.id, req.body, { new: true });
@@ -45,7 +40,6 @@ exports.updateMedicine = async (req, res) => {
     }
 };
 
-// Delete a medicine
 exports.deleteMedicine = async (req, res) => {
     try {
         const medicine = await Medicine.findByIdAndDelete(req.params.id);

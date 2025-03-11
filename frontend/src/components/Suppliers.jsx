@@ -50,7 +50,6 @@ const Suppliers = () => {
         <div className="p-6 bg-gray-100 min-h-screen">
             <h1 className="text-3xl font-bold text-gray-800 mb-6">Suppliers</h1>
 
-            {/* Filter Input */}
             <input
                 type="text"
                 placeholder="Filter by Name"
@@ -59,7 +58,6 @@ const Suppliers = () => {
                 className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent mb-6"
             />
 
-            {/* Supplier Form */}
             <div className="bg-white p-6 rounded-lg shadow-lg mb-6">
                 <h2 className="text-xl font-bold text-gray-800 mb-4">
                     {editMode ? 'Edit Supplier' : 'Add Supplier'}
@@ -93,7 +91,7 @@ const Suppliers = () => {
                 </button>
             </div>
 
-            {/* Filtered Suppliers List */}
+
             <div className="grid gap-6">
                 {filteredSuppliers.map((sup) => (
                     <div key={sup._id} className="bg-white p-6 rounded-lg shadow-lg">

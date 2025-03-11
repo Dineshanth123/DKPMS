@@ -7,10 +7,9 @@ const Navbar = ({ setIsAuthenticated }) => {
 
   return (
     <nav className="bg-orange-600 p-4 flex justify-between items-center shadow-lg">
-      {/* Logo/Title */}
+      
       <h1 className="text-white text-2xl font-bold">DK Pharmaceuticals Management</h1>
 
-      {/* Navigation Links */}
       <div className="space-x-6">
         <Link to="/" className="text-white hover:text-orange-200 transition duration-300">
           Medicine List

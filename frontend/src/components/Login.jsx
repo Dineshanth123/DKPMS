@@ -13,7 +13,7 @@ const Login = ({ setIsAuthenticated }) => {
         const isLoggedIn = localStorage.getItem("isAuthenticated");
         if (isLoggedIn === "true") {
             setIsAuthenticated(true);
-            navigate("/"); // Redirect to main page if already logged in
+            navigate("/"); 
         }
     }, [setIsAuthenticated, navigate]);
 
@@ -21,7 +21,7 @@ const Login = ({ setIsAuthenticated }) => {
         try {
             const res = await axios.post("http://localhost:5000/api/login", { username, password });
             if (res.data.success) {
-                localStorage.setItem("isAuthenticated", "true"); // Store login state
+                localStorage.setItem("isAuthenticated", "true"); 
                 setIsAuthenticated(true);
                 navigate("/");
             } else {
@@ -34,12 +34,10 @@ const Login = ({ setIsAuthenticated }) => {
 
     return (
         <div className="flex flex-col md:flex-row items-center justify-center min-h-screen p-6">
-            {/* Image Section */}
             <div className="bg-white p-4 flex-1 flex justify-center">
                 <img src={img1} alt="Login Visual" className="w-[500px] h-[500px] object-cover" />
             </div>
 
-            {/* Login Form Section */}
             <div className="bg-white rounded-lg shadow-2xl p-8 w-[400px] h-[450px] mt-6 md:mt-0 md:ml-6 flex-1 flex justify-end">
                 <div className="w-full max-w-md flex flex-col justify-center">
                     <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">Login</h2>

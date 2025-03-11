@@ -1,4 +1,3 @@
-// medicineRoutes.js
 const express = require('express');
 const router = express.Router();
 const { 
@@ -9,7 +8,6 @@ const {
     deleteMedicine 
 } = require('../controllers/medicineController');
 
-// CRUD Routes
 router.get('/', getMedicines);
 router.get('/:id', getMedicineById);
 router.post('/', createMedicine);
