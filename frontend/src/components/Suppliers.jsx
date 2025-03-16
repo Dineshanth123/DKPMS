@@ -12,7 +12,7 @@ const Suppliers = () => {
     }, []);
 
     const fetchSuppliers = async () => {
-        const response = await axios.get('http://localhost:5000/api/suppliers');
+        const response = await axios.get('https://dkpms3.onrender.com/api/suppliers');
         setSuppliers(response.data);
     };
 
@@ -23,9 +23,9 @@ const Suppliers = () => {
 
     const handleSubmit = async () => {
         if (editMode) {
-            await axios.put(`http://localhost:5000/api/suppliers/${supplier._id}`, supplier);
+            await axios.put(`https://dkpms3.onrender.com/api/suppliers/${supplier._id}`, supplier);
         } else {
-            await axios.post('http://localhost:5000/api/suppliers', supplier);
+            await axios.post('https://dkpms3.onrender.com/api/suppliers', supplier);
         }
         setEditMode(false);
         setSupplier({ name: '', contact: '', address: '', _id: '' });
@@ -33,7 +33,7 @@ const Suppliers = () => {
     };
 
     const handleDelete = async (id) => {
-        await axios.delete(`http://localhost:5000/api/suppliers/${id}`);
+        await axios.delete(`https://dkpms3.onrender.com/api/suppliers/${id}`);
         fetchSuppliers();
     };
 

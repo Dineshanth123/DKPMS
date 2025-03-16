@@ -19,7 +19,7 @@ const Login = ({ setIsAuthenticated }) => {
 
     const handleLogin = async () => {
         try {
-            const res = await axios.post("http://localhost:5000/api/login", 
+            const res = await axios.post("https://dkpms3.onrender.com/api/login", 
                 { username, password }, 
                 { headers: { "Content-Type": "application/json" } } 
             );

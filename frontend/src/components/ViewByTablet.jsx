@@ -14,7 +14,7 @@ const ViewByTablet = () => {
 
   const fetchMedicines = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/medicines");
+      const response = await axios.get("https://dkpms3.onrender.com/api/medicines");
       setMedicines(response.data);
     } catch (error) {
       console.error("Failed to fetch medicines", error);
@@ -29,7 +29,7 @@ const ViewByTablet = () => {
         alert("Quantity cannot be negative");
         return;
       }
-      await axios.put(`http://localhost:5000/api/medicines/${id}`, {
+      await axios.put(`https://dkpms3.onrender.com/api/medicines/${id}`, {
         quantity: newQuantity,
       });
       setMedicines((prev) =>
@@ -44,7 +44,7 @@ const ViewByTablet = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/medicines/${id}`);
+      await axios.delete(`https://dkpms3.onrender.com/api/medicines/${id}`);
       fetchMedicines();
     } catch (error) {
       console.error("Error deleting medicine:", error);
