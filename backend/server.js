@@ -14,7 +14,12 @@ connectDB();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors({ origin: "*", credentials: true }));
+app.use(cors({
+  origin: "*", 
+  credentials: true,
+  methods: "GET,POST,PUT,DELETE",
+}));
+
 app.use(bodyParser.json());
 
 app.use("/api/medicines", medicineRoutes);
@@ -27,6 +32,7 @@ const allowedUsers = [
 ];
 
 app.post("/api/login", (req, res) => {
+  console.log("Received Login Data:", req.body);
   const { username, password } = req.body;
   const user = allowedUsers.find((u) => u.username === username && u.password === password);
 
