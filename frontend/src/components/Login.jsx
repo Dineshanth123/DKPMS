@@ -19,9 +19,12 @@ const Login = ({ setIsAuthenticated }) => {
 
     const handleLogin = async () => {
         try {
-            const res = await axios.post("http://localhost:5000/api/login", { username, password });
+            const res = await axios.post("http://localhost:5000/api/login", 
+                { username, password }, 
+                { headers: { "Content-Type": "application/json" } } 
+            );
             if (res.data.success) {
-                localStorage.setItem("isAuthenticated", "true"); 
+                localStorage.setItem("isAuthenticated", "true");
                 setIsAuthenticated(true);
                 navigate("/");
             } else {
@@ -31,6 +34,7 @@ const Login = ({ setIsAuthenticated }) => {
             setError("Invalid credentials. Please try again.");
         }
     };
+    
 
     return (
         <div className="flex flex-col md:flex-row items-center justify-center min-h-screen p-6">
